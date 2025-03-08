@@ -1,0 +1,26 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  --dark-gray: rgb(29, 29, 29);
+  --primary-color: #4f595a;
+  --secondary-color: #AEB3BC;
+  --light-color: #D8DADF;
+  --dark-green: #19ca84;
+  --light-green: #f2fdf9;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

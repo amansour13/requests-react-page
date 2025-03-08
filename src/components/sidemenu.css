@@ -1,0 +1,76 @@
+.side-menu {
+    display: flex;
+    height: 100vh;
+}
+
+.resizer-container {
+    position: relative;
+    width: 2px; /* Wider to make it easier to drag */
+    height: 100%;
+    cursor: ew-resize;
+}
+
+.resizer-line {
+    width: 1px;
+    height: 100%;
+    background-color: var(--light-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.toggle-button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: white;
+    color: var(--secondary-color);
+    border: solid 1px var(--secondary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+  
+.divider {
+    /* height: 1.5px; */
+    flex: 0 1 1.5px;
+    width: 100%;
+    background-color: var(--light-color);
+}
+
+.toggle-button:hover {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+
+.orders{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    cursor: pointer;
+    color: black;
+    width: 150px;
+    height: 100vh;
+}
+
+.orders .order-title{
+    padding: 30px 20px;
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.orders .order-item{
+    padding: 10px 20px;
+    margin: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f7f8fa;
+}
+
+.order-text{
+    margin: 0px;
+    color: var(--primary-color)
+}
