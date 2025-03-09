@@ -1,0 +1,280 @@
+.tab-main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+.message-section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    height: 60%;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+.message-section::-webkit-scrollbar {
+    display: none;
+}
+.message-title{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.message-btns{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-title-left-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+.play-time{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.play-time button{
+    border: none;
+    padding: 0px;
+}
+
+.play-time-text{
+    color: var(--secondary-color);
+}
+
+.btn-type1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--secondary-color);
+    padding: 5px;
+    border: solid 1.5px var(--secondary-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-type1:hover{
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.btn-type2{
+    background-color: var(--dark-green);
+    color: white;
+    padding: 5px;
+    border: solid 1.5px var(--secondary-color);
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.btn-type2:hover{
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+
+.message-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: solid 1.5px var(--secondary-color);
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+
+.active-card{
+    background-color: var(--light-green);
+    border: solid 2px var(--dark-green);
+}
+
+.message-card h5, .message-card h6{
+    margin: 0px;
+    color: var(--secondary-color);
+}
+
+.message-card h5{
+    color: var(--primary-color);
+}
+
+.message-card-header-text h6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;   
+}
+.message-card-header-up h6{  
+    font-weight: 600;
+}
+
+.message-card .message-card-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.message-card-header-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-card-header-up{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+}
+
+.message-card-header-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.message-card-header-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.message-card-header-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+
+.message-card-body p{
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.response-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: start ;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 40%;
+    border-top: solid 1.5px var(--secondary-color);
+}
+
+.fast-response{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    
+}
+
+.fast-response h5{
+    margin: 0px;
+    color: var(--secondary-color);
+}
+
+.fast-response-text{
+    flex: 1;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 10px 5px;
+    overflow-x: hidden;
+    max-width: 700px;  
+}
+
+.fast-response-text ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.fast-response-text li{
+    background-color: white;
+    border: solid 1.5px var(--secondary-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.fast-response-text li:hover{
+    background-color: var(--light-color);
+    color: white;
+}
+
+.fast-response-text li h6{
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.fast-response-text {
+    overflow-x: auto;  /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Target only this div's scrollbar */
+.fast-response-text::-webkit-scrollbar {
+    margin-top: 10px;
+    height: 8px; /* Control the horizontal scrollbar height */
+}
+
+.fast-response-text::-webkit-scrollbar-track {
+    background: var(--light-color); /* Light gray track */
+    border-radius: 10px;
+}
+
+.fast-response-text::-webkit-scrollbar-thumb {
+    background: #888; /* Darker gray handle */
+    border-radius: 10px;
+}
+
+.fast-response-text::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Even darker gray when hovered */
+}
+  
