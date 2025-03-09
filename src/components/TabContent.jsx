@@ -7,11 +7,16 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import ReplyOutlinedIcon from '@mui/icons-material/ReplyOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
+import { Paperclip, Sparkles, Type, Search, CaseSensitive } from "lucide-react";
+
 import avatar from '../assets/avatar.jpg';
 import './tabcontent.css';
 import { useState } from 'react';
 
 function TabContent(props){
+
+    const [cc, setCC] = useState(false);
+    const [emailR, setEmailR] = useState("");
 
     const emailData = {
         emails: [
@@ -68,6 +73,13 @@ function TabContent(props){
 
     const [openMessages, setOpenMessages] = useState({});
     const [highlight, setHighlight] = useState(0);
+    const [searchValue, setSearchValue] = useState("");
+    const [text, setText] = useState("");
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const handleTagClick = (email) => {
+      setSearchValue(email);
+    };
 
     const toggleMessage = (id) => {
         setOpenMessages(prevState => ({
@@ -107,7 +119,7 @@ function TabContent(props){
                 </div>
                 {
                     emailData.emails.map(email => (
-                        <div className={`message-card ${highlight === email.id ? 'active-card' : ''}`} key={email.id} onClick={() => setHighlight(email.id)}>
+                        <div className={`message-card ${highlight === email.id ? 'active-card' : ''}`} key={email.id} onClick={() => {setHighlight(email.id);setEmailR(email.sender.email)}}>
                             <div className='message-card-header'>
                                 <div className='message-card-header-right'>
                                     <img src={email.sender.image} alt='avatar' style={{width: '30px', height: '30px', objectFit:'cover', borderRadius: '100%'}}/>
@@ -157,7 +169,67 @@ function TabContent(props){
                 </div>
 
                 <div className='response-main'>
+                    <div className='response-main-header'>
+                        <div className='response-main-header-btns'>
+                            <button className={cc ? 'btn-type1' : 'btn-type2'} onClick={() => {setCC(!cc)}}>CC</button>
+                            <button className='btn-type1'> <ZoomOutMapOutlinedIcon sx={{fontSize: '18px'}}/></button>
+                        </div>
+                        <div className='response-main-header-data'>
+                            <div className='response-email-section'>
+                                <h5>رد الي:</h5>
+                                <input type="email" name="email" id="email-input" className='text-input' value={emailR} disabled/>
+                            </div>
+                            <div className='response-cc-section'>
+                                <h5>cc:</h5>
+                                <div className="search-container">
+                                    <input type="text" placeholder="ادخل اسم" className="search-input" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
+                                    <Search className="search-icon" size={10} />
+                                </div>
 
+                                <div className="email-tags">
+                                        <div className="email-tag" onClick={() => handleTagClick(event.target.innerText.replace("×", "").trim())}>
+                                        ahmed@example.com
+                                        <span className="close-btn">&times;</span>
+                                    </div>
+                                    <div className="email-tag">
+                                        ahmed@example.com
+                                        <span className="close-btn">&times;</span>
+                                    </div>
+                                    <div className="email-tag">
+                                        ahmed@example.com
+                                        <span className="close-btn">&times;</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className='response-main-body'>
+                        <div className="textarea-container">
+                            <textarea className="custom-textarea" placeholder="إضافة رد..." value={text} onChange={(e) => setText(e.target.value)} onFocus={() => setIsExpanded(true)} onBlur={() => setIsExpanded(false)} />
+
+                            <div className='textarea-footer'>
+
+                                <div className="icons">
+                                    <CaseSensitive size={24} color="#A3A3A3" />
+                                    <Sparkles size={18} color="#A3A3A3" />
+                                    <Paperclip size={18} color="#A3A3A3" />
+                                </div>
+
+                                {isExpanded && (
+                                    <div className="buttons">
+                                        <button className="btn-type2 add-reply">
+                                            إضافة رد | <KeyboardArrowUpOutlinedIcon/>
+                                        </button>
+                                        <button className="btn-type1 close-reply">
+                                            <span className="close-btn">&times;&nbsp;</span>
+                                            إلغاء
+                                    </button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
