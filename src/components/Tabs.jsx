@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LeftSideBar from "./LeftSideBar";
 import "./Tabs.css";
+import TabContent from "./TabContent";
 
 const Tabs = () => {
     const [tabs, setTabs] = useState([
@@ -61,19 +62,8 @@ const Tabs = () => {
             </div>
             
             <div className="tabs-content-conatiner">
-                <div className="tabs-content">
-                    {tabs.map(tab => (
-                        <div
-                            key={tab.id}
-                            className={`tab-content ${tab.active ? "active" : ""}`}
-                        >
-                            <p>
-                                {tab.title} {tab.number}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-
+                
+                <TabContent title={tabs.find(tab => tab.active).title} id={tabs.find(tab => tab.active).id} />
                 <LeftSideBar />
             </div>
 
