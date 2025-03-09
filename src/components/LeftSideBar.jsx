@@ -24,7 +24,7 @@ import './leftsidebar.css';
 
 function LeftSideBar() {
     const [isOpen, setIsOpen] = useState(true);
-    const [activeSection, setActiveSection] = useState("transc");
+    const [activeSection, setActiveSection] = useState("timelines");
 
 
     const timelineData = [
@@ -184,7 +184,7 @@ function LeftSideBar() {
 
                 <div className="resizer-container">
                     <div className="resizer-line"></div>
-                    <button className="toggle-button" style={{top: '5%'}} onClick={() => setIsOpen(!isOpen)}>
+                    <button className="toggle-button" style={{top: '7%'}} onClick={() => setIsOpen(!isOpen)}>
                     {isOpen ? <ChevronLeft style={{fontSize: '20px', margin: '0px', position: 'absolute ', top: '-1px',right: '0px'}}/> : <ChevronRight style={{fontSize: '20px', margin: '0px', position: 'absolute ', top: '-1px',right: '0px'}}/>}
                     </button>
                 </div>
