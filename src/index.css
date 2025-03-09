@@ -7,6 +7,7 @@
   --primary-color: #4f595a;
   --secondary-color: #AEB3BC;
   --light-color: #D8DADF;
+  --light-gray: rgba(235, 236, 240, 0.642);
   --dark-green: #19ca84;
   --light-green: #f2fdf9;
 }
