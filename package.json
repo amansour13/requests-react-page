@@ -1,7 +1,7 @@
 {
-  "homepage": "https://amansour13.github.io/requests-react-page",
   "name": "talabat-taks",
   "private": true,
+  "homepage": "https://amansour13.github.io/requests-react-page/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
