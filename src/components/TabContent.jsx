@@ -171,7 +171,7 @@ function TabContent(props){
                 <div className='response-main'>
                     <div className='response-main-header'>
                         <div className='response-main-header-btns'>
-                            <button className={cc ? 'btn-type1' : 'btn-type2'} onClick={() => {setCC(!cc)}}>CC</button>
+                            <button className={cc ? 'btn-type2' : 'btn-type1'} onClick={() => {setCC(!cc)}}>CC</button>
                             <button className='btn-type1'> <ZoomOutMapOutlinedIcon sx={{fontSize: '18px'}}/></button>
                         </div>
                         <div className='response-main-header-data'>
@@ -179,7 +179,7 @@ function TabContent(props){
                                 <h5>رد الي:</h5>
                                 <input type="email" name="email" id="email-input" className='text-input' value={emailR} disabled/>
                             </div>
-                            <div className='response-cc-section'>
+                            {cc && <div className='response-cc-section'>
                                 <h5>cc:</h5>
                                 <div className="search-container">
                                     <input type="text" placeholder="ادخل اسم" className="search-input" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
@@ -201,7 +201,7 @@ function TabContent(props){
                                     </div>
                                 </div>
 
-                            </div>
+                            </div>}
                         </div>
                     </div>
                     <div className='response-main-body'>
@@ -224,7 +224,7 @@ function TabContent(props){
                                         <button className="btn-type1 close-reply">
                                             <span className="close-btn">&times;&nbsp;</span>
                                             إلغاء
-                                    </button>
+                                        </button>
                                     </div>
                                 )}
                             </div>
