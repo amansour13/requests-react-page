@@ -8,11 +8,12 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 import './sidebar.css';
 
 function Sidebar() {
-
+    const [active, setActive] = useState(true);
     let navItems ={ 
         dashboard: {
             icon: <DashboardIcon style={{color:'#c1c3cd'}}/>,
@@ -66,10 +67,10 @@ function Sidebar() {
                         Object.entries(navItems).map(([key, value]) => {
                             return(
                                 <li className='nav-item'>
-                                    <NavLink to={`/${key}`} className={({ isActive }) => isActive ? "link active": "link"}>
+                                    <a href='#' className='link'>
                                         {value.icon}
                                         <h6 className='nav-text'>{value.text}</h6>
-                                    </NavLink>
+                                    </a>
                                 </li>
                             );
                         })
