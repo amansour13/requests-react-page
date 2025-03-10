@@ -32,35 +32,35 @@ function LeftSideBar() {
           time: "02:32 22-09-2024 - م",
           title: "أحدث الطلبات",
           description: "قام @محمد صفر بإنشاء تذكرة باسم مواجهة مشكلة في عدم عمل واجهة المستخدم الحالية، أرجو الرد.",
-          icon: <LocalActivityIcon sx={{fontSize: '16px'}}/>,
+          icon: <LocalActivityIcon sx={{fontSize: '14px'}}/>,
           color: "primary"
         },
         {
           time: "02:32 22-09-2024 - م",
           title: "أحدث الطلبات",
           description: "قام @فهد فهد بالرد على التذكرة، جاري العمل على إصلاح المشكلة.",
-          icon: <ReplyAllIcon sx={{fontSize: '16px'}}/>,
+          icon: <ReplyAllIcon sx={{fontSize: '14px'}}/>,
           color: "secondary"
         },
         {
           time: "02:32 22-09-2024 - م",
           title: "أحدث الطلبات",
           description: "قام @العميل بالرد على التذكرة، شكرًا لمجهوداتكم وأريد الإسراع.",
-          icon: <AccountCircleIcon sx={{fontSize: '16px'}}/>,
+          icon: <AccountCircleIcon sx={{fontSize: '14px'}}/>,
           color: "success"
         },
         {
           time: "02:32 22-09-2024 - م",
           title: "أحدث الطلبات",
           description: "قام @فهد فهد بإضافة ملاحظة، سنحاول العمل على حل المشكلة بأسرع ما يمكن.",
-          icon: <FeedIcon sx={{fontSize: '16px'}}/>,
+          icon: <FeedIcon sx={{fontSize: '14px'}}/>,
           color: "warning"
         },
         {
           time: "02:32 22-09-2024 - م",
           title: "أحدث الطلبات",
           description: "قام @محمد صفر بتغيير حالة التذكرة إلى مفتوح أم مغلق.",
-          icon: <ViewAgendaOutlinedIcon sx={{fontSize: '16px'}}/>,
+          icon: <ViewAgendaOutlinedIcon sx={{fontSize: '14px'}}/>,
           color: "info"
         }
       ];
@@ -119,7 +119,9 @@ function LeftSideBar() {
                     {
                         activeSection === "timelines" && 
                         <div className="content">
-                            <h3>السجلات الزمنية</h3>
+                            <div className='content-title'>
+                                <h3>السجلات الزمنية</h3>
+                            </div>
                             <Timeline sx={{padding: '0px'}}>
                                 {timelineData.map((item, index) => (
                                     <TimelineItem key={index} sx={{ '&::before': { display: 'none', marginTop: '100px' }}}>
@@ -129,9 +131,9 @@ function LeftSideBar() {
                                         {index !== timelineData.length - 1 && <TimelineConnector />}
                                         </TimelineSeparator>
                                         <TimelineContent >
-                                            <Typography variant="h6" sx={{ textAlign: 'right',fontSize: '14px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.title}</Typography>
-                                            <Typography variant="h6" color="text.secondary" sx={{ textAlign: 'right', fontSize: '12px',marginBottom: '10px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.time}</Typography>
-                                            <Typography sx={{ textAlign: 'right', fontSize: '12px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.description}</Typography>
+                                            <Typography variant="h6" sx={{ textAlign: 'right',fontSize: '12px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.title}</Typography>
+                                            <Typography variant="h6" color="text.secondary" sx={{ textAlign: 'right', fontSize: '10px',marginBottom: '10px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.time}</Typography>
+                                            <Typography sx={{ textAlign: 'right', fontSize: '10px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.description}</Typography>
                                         </TimelineContent>
                                     </TimelineItem>
                                 ))}

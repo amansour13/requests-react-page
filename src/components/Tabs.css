@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    flex: 1 1 auto;
+    /* flex: 1 1 auto; */
+    height: calc(100vh - 64px);
+    border-top: solid 1.5px var(--secondary-color);
 }
 
 .tabs-titles-container {
@@ -83,7 +85,7 @@
 .tabs-content-conatiner{
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    /* height: calc(100% - 128px); */
     display: flex;
     flex-direction: row;
     justify-content: space-between;

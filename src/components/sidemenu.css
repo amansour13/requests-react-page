@@ -1,10 +1,21 @@
 .side-menu {
     display: flex;
-    height: 100vh;
+    flex-direction: row;
+    /* min-height: 100vh; */
+}
+.side-menu ul{
+
+    border-top: solid 1px var(--secondary-color);
+}
+
+.side-menu-items{
+    display: flex;
+    flex-direction: column;
 }
 
 .resizer-container {
     position: relative;
+    display: flex;
     width: 2px; /* Wider to make it easier to drag */
     height: 100%;
     cursor: ew-resize;
@@ -31,14 +42,16 @@
     border: solid 1px var(--secondary-color);
     border-radius: 50%;
     cursor: pointer;
+    z-index: 1;
 }
   
-.divider {
-    /* height: 1.5px; */
+/* .divider {
+    height: 1.5px;
     flex: 0 1 1.5px;
     width: 100%;
     background-color: var(--light-color);
-}
+    height: 100%;
+} */
 
 .toggle-button:hover {
     background-color: var(--dark-green);
@@ -53,7 +66,7 @@
     cursor: pointer;
     color: black;
     width: 150px;
-    height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .orders .order-title{

@@ -8,15 +8,18 @@ function SideMenu(props) {
     return (
         <div className="side-menu">
         {
-                isOpen && 
+            isOpen &&
+                <>
+                <div className='side-menu-items'>
+
+                <h4 className='order-title'>{props.title}</h4>
                 <ul className='orders'>
                     <li className=''>
                         <a href="#" className='link'>
-                            <h4 className='order-title'>{props.title}</h4>
                         </a>
                     </li>
                         
-                    <div className="divider"></div>
+                    {/* <div className="divider"></div> */}
 
                     {props.items.map((item, index) => (
                         <li key={index} className='order-item'>
@@ -27,6 +30,8 @@ function SideMenu(props) {
                     ))}
                 </ul>
 
+                </div>
+            </> 
             }
 
             <div className="resizer-container">

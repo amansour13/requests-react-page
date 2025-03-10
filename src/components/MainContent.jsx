@@ -20,7 +20,7 @@ function MainContent(props){
                         <li className='icon notification-container'><NotificationsOutlinedIcon style={{color: 'var(--secondary-color)'}}/><span className="notification-badge">6</span></li>
                     </ul>
                 </div>
-                <div className='divider'></div>
+                {/* <div className='divider'></div> */}
 
                 <Tabs />
             </div>

@@ -179,7 +179,7 @@ function TabContent(props){
                                 <h5>رد الي:</h5>
                                 <input type="email" name="email" id="email-input" className='text-input' value={emailR} disabled/>
                             </div>
-                            {cc && <div className='response-cc-section'>
+                            { <div className='response-cc-section'>
                                 <h5>cc:</h5>
                                 <div className="search-container">
                                     <input type="text" placeholder="ادخل اسم" className="search-input" value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
@@ -216,7 +216,7 @@ function TabContent(props){
                                     <Paperclip size={18} color="#A3A3A3" />
                                 </div>
 
-                                {isExpanded && (
+                                {(
                                     <div className="buttons">
                                         <button className="btn-type2 add-reply">
                                             إضافة رد | <KeyboardArrowUpOutlinedIcon/>

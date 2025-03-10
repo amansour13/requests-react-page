@@ -6,8 +6,11 @@ import Sidebar from "../components/sidebar";
 function Requests() {
     return (
         <>
-            <Sidebar />
-            <SideMenu title="الطلبات" items={["الطلبات"]} />
+            <div style={{display: 'flex', height: '100vh'}}>
+                <Sidebar />
+                <SideMenu title="الطلبات" items={["الطلبات"]} />
+
+            </div>
             <MainContent title="الطلبات" />
         </>
     );
