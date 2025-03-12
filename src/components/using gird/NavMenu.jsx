@@ -8,6 +8,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useState } from 'react';
+import profileImage from '../../assets/avatar.jpg';
 
 function NavMenu() {
     const [active, setActive] = useState(true);
@@ -73,6 +74,18 @@ function NavMenu() {
                     }
 
                 </ul>
+
+                <div className="relative inline-block m-5 cursor-pointer">
+                    <div className="w-10 h-10 rounded-full border-[3px] border-green-500 overflow-hidden">
+                        <img 
+                            src={profileImage} 
+                            alt="Profile" 
+                            className="w-full h-full object-cover" 
+                        />
+                    </div>
+
+                <div className="absolute bottom-0 left-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div>
+            </div>
         </>
     );
 }
