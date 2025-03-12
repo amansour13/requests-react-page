@@ -332,7 +332,7 @@
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 20px;
 }
 
