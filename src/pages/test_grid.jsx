@@ -2,6 +2,8 @@ import NavMenu from '../components/using gird/NavMenu.jsx';
 import RightSideMenu from '../components/using gird/RightSideMenu.jsx';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import LeftSideMenu from '../components/using gird/LeftSideMenu.jsx';
+import LeftSideBar from '../components/using gird/LeftSideBar.jsx';
 
 function TestGrid(){
     const [isRightMenuOpen, setIsRightMenuOpen] = useState(true);
@@ -38,9 +40,9 @@ function TestGrid(){
             <div className={`${isLeftMenuOpen ? 'col-span-3' : 'col-span-1'} row-span-2 grid relative`}>
                     <div className="grid grid-cols-[3fr_1fr] gap-[0.05rem]">
                     {isLeftMenuOpen &&
-                        <div className="bg-white">left side menu content</div>
+                        <div className="bg-white"><LeftSideMenu /></div>
                     }
-                        <div className={`bg-white ${isLeftMenuOpen ? '' : "col-span-full"}`}>left side menu</div>
+                        <div className={`bg-white ${isLeftMenuOpen ? '' : "col-span-full"}`}><LeftSideBar /></div>
                     </div>
 
                 <button className="group rounded-full absolute top-[10%] right-[-12.5px] box-border p-3 bg-white border-[1px] border-[#E2E8F0] hover:bg-[#00ca7d] cursor-pointer" onClick={() => setIsLeftMenuOpen(!isLeftMenuOpen)}>
