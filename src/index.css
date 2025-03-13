@@ -83,11 +83,11 @@ a{
 
 
 .fast-response-text{
-  flex: 1;
   background-color: var(--light-gray);
   border-radius: 10px;
   padding: 5px 5px;
   overflow-x: hidden;
+  width: 100%;
 
 }
 
@@ -96,7 +96,7 @@ a{
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  max-width: 700px;  
+  width: 100%;
   gap: 10px;
 }
 .fast-response-text li{
@@ -104,6 +104,7 @@ a{
   border: solid 1.5px var(--secondary-color);
   border-radius: 20px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .fast-response-text li:hover{
@@ -185,4 +186,12 @@ a{
   transform: translateY(-50%);
   color: var(--secondary-color); /* Gray color for icon */
   pointer-events: none; /* Prevent clicking on the icon */
+}
+
+.add-reply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
 }

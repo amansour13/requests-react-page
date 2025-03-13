@@ -16,7 +16,7 @@ function TestGrid(){
     const [isLeftMenuOpen, setIsLeftMenuOpen] = useState(true);
 
     return (
-        <div className="grid grid-cols-12 grid-rows-[1fr_5fr] w-screen h-screen ">
+        <div className="grid grid-cols-12 grid-rows-[1fr_5fr] w-screen h-full ">
             <div className={`${isRightMenuOpen ? 'col-span-2' : 'col-span-1'} row-span-2 grid grid-cols-3 relative border-l-[0.05rem] border-[var(--secondary-color)]`}>
                 <div className={`bg-white ${isRightMenuOpen ? 'col-span-1' : 'col-span-3'} flex flex-col items-center`}>
                     <NavMenu />
@@ -35,13 +35,13 @@ function TestGrid(){
             
             <TabsContextProvider> 
                 <div className={`${isRightMenuOpen ? 'col-span-10' : 'col-span-11'} grid grid-rows-2 gap-[0.05rem] min-w-0`}>
-                    <div className="bg-white min-w-0 w-full overflow-x-auto"><PageTopBar title="الطلبات"/></div>
+                    <div className="bg-white min-w-0 w-full"><PageTopBar title="الطلبات"/></div>
                     <div className="bg-white flex items-center min-w-0 w-full overflow-x-auto scrollbar-hide border-b-[0.05rem] border-[var(--secondary-color)]"><TabTitlesSection /></div>
                 </div>
 
-                <div className={`min-h-0 ${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[4fr_3fr] gap-[0.05rem]`}>
-                        <div className="bg-white relative min-h-0 min-w-0 h-full overflow-y-auto scrollbar-hide"><EmailsSection  /></div>
-                        <div className="bg-white min-h-0 h-full w-full p-5 gap-2 flex flex-col"><ResponseSection /></div>
+                <div className={`w-full min-h-0 ${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[4fr_3fr] gap-[0.05rem]`}>
+                        <div className="bg-white relative w-full min-h-0 h-full overflow-y-auto scrollbar-hide"><EmailsSection  /></div>
+                        <div className="bg-white min-h-0 h-full p-5 gap-2 flex flex-col"><ResponseSection /></div>
                 </div>
             </TabsContextProvider>
             
