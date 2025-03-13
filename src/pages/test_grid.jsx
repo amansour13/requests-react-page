@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import LeftSideMenu from '../components/using gird/LeftSideMenu.jsx';
 import LeftSideBar from '../components/using gird/LeftSideBar.jsx';
 import { ActiveSectionProvider } from '../components/using gird/ActiveSectionContext.jsx';
+import PageTopBar from '../components/using gird/PageTopBar.jsx';
 
 function TestGrid(){
     const [isRightMenuOpen, setIsRightMenuOpen] = useState(true);
@@ -29,7 +30,7 @@ function TestGrid(){
             </div>
             
             <div className={`${isRightMenuOpen ? 'col-span-10' : 'col-span-11'} grid grid-rows-2 gap-[0.05rem]`}>
-                <div className="bg-white">page title</div>
+                <div className="bg-white"><PageTopBar title="الطلبات"/></div>
                 <div className="bg-white">tabs titles</div>
             </div>
 
@@ -42,9 +43,9 @@ function TestGrid(){
                     <ActiveSectionProvider>
                         <div className="grid grid-cols-[3fr_1fr] gap-[0.05rem] min-h-0">
                         {isLeftMenuOpen &&
-                            <div className="transition-all duration-1000 ease-in-out bg-white h-full overflow-y-auto min-h-0"><LeftSideMenu /></div>
+                            <div className="bg-white h-full overflow-y-auto min-h-0"><LeftSideMenu /></div>
                         }
-                            <div className={`bg-white ${isLeftMenuOpen ? '' : "col-span-full"}`}><LeftSideBar /></div>
+                            <div className={`bg-white h-full overflow-y-auto min-h-0  ${isLeftMenuOpen ? '' : "col-span-full"}`}><LeftSideBar /></div>
                         </div>
                     </ActiveSectionProvider>
 

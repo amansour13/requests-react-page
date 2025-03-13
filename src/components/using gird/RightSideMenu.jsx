@@ -6,7 +6,7 @@ function RightSideMenu(props) {
         <>
         { 
                 <>
-                <h2 className='font-bold  text-[24px]/[60px]'>{props.title}</h2>
+                <h2 className='font-bold  text-[24px]/[60px] border-b-[0.05rem] border-[var(--secondary-color)]'>{props.title}</h2>
                 <ul className=''>
                     <li className=''>
                         <a href="#" className=''>
