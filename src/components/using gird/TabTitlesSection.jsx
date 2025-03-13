@@ -34,7 +34,7 @@ function TabTitlesSection() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`h-full flex items-center gap-3 px-3 py-2 border-l-[0.05rem] border-[var(--secondary-color)] cursor-pointer transition-all ${
                     tab.active 
-                        ? "border-b-yellow-400 border-b-2 shadow-[inset_0px_10px_0px_white] z-10" 
+                        ? "border-b-[#373E5D] border-b-2" 
                         : "opacity-40"
                     }`}
                 >
