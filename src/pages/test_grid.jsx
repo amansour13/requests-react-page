@@ -38,8 +38,8 @@ function TestGrid(){
                     <div className="bg-white flex items-center min-w-0 w-full overflow-x-auto scrollbar-hide border-b-[0.05rem] border-[var(--secondary-color)]"><TabTitlesSection /></div>
                 </div>
 
-                <div className={`${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[3fr_2fr] gap-[0.05rem]`}>
-                        <div className="bg-white p-5"><EmailsSection  /></div>
+                <div className={`min-h-0 min-w-0 ${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[3fr_2fr] gap-[0.05rem]`}>
+                        <div className="bg-white relative min-h-0 min-w-0 h-full overflow-y-auto scrollbar-hide"><EmailsSection  /></div>
                         <div className="bg-white">response section</div>
                 </div>
             </TabsContextProvider>

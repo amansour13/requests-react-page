@@ -77,11 +77,12 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    color: var(--secondary-color);
-    padding: 5px;
-    border: solid 1.5px var(--secondary-color);
-    border-radius: 10px;
+    color: #7A8699;
+    padding: 2px;
+    border: solid 1px #7A8699;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 11px;
 }
 
 .btn-type1:hover{
@@ -117,29 +118,8 @@
     margin: 10px 0px;
 }
 
-.active-card{
-    background-color: var(--light-green);
-    border: solid 2px var(--dark-green);
-}
 
-.message-card h5, .message-card h6{
-    margin: 0px;
-    color: var(--secondary-color);
-}
 
-.message-card h5{
-    color: var(--primary-color);
-}
-
-.message-card-header-text h6{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;   
-}
-.message-card-header-up h6{  
-    font-weight: 600;
-}
 
 .message-card .message-card-header{
     display: flex;
