@@ -7,6 +7,8 @@ import LeftSideBar from '../components/using gird/LeftSideBar.jsx';
 import { ActiveSectionProvider } from '../components/using gird/ActiveSectionContext.jsx';
 import PageTopBar from '../components/using gird/PageTopBar.jsx';
 import TabTitlesSection from '../components/using gird/TabTitlesSection.jsx';
+import EmailsSection from '../components/using gird/EmailsSection.jsx';
+import { TabsContextProvider } from '../components/using gird/TabsContext.jsx';
 
 function TestGrid(){
     const [isRightMenuOpen, setIsRightMenuOpen] = useState(true);
@@ -30,15 +32,17 @@ function TestGrid(){
                         </button>
             </div>
             
-            <div className={`${isRightMenuOpen ? 'col-span-10' : 'col-span-11'} grid grid-rows-2 gap-[0.05rem] min-w-0`}>
-                <div className="bg-white min-w-0 w-full overflow-x-auto"><PageTopBar title="الطلبات"/></div>
-                <div className="bg-white flex items-center min-w-0 w-full overflow-x-auto scrollbar-hide border-b-[0.05rem] border-[var(--secondary-color)]"><TabTitlesSection /></div>
-            </div>
+            <TabsContextProvider> 
+                <div className={`${isRightMenuOpen ? 'col-span-10' : 'col-span-11'} grid grid-rows-2 gap-[0.05rem] min-w-0`}>
+                    <div className="bg-white min-w-0 w-full overflow-x-auto"><PageTopBar title="الطلبات"/></div>
+                    <div className="bg-white flex items-center min-w-0 w-full overflow-x-auto scrollbar-hide border-b-[0.05rem] border-[var(--secondary-color)]"><TabTitlesSection /></div>
+                </div>
 
-            <div className={`${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[3fr_2fr] gap-[0.05rem]`}>
-                <div className="bg-white">emails section</div>
-                <div className="bg-white">response section</div>
-            </div>
+                <div className={`${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[3fr_2fr] gap-[0.05rem]`}>
+                        <div className="bg-white p-5"><EmailsSection  /></div>
+                        <div className="bg-white">response section</div>
+                </div>
+            </TabsContextProvider>
             
             <div className={`${isLeftMenuOpen ? 'col-span-3' : 'col-span-1'} row-span-2 grid relative border-r-[0.05rem] border-[var(--secondary-color)]`}>
                     <ActiveSectionProvider>
