@@ -4,13 +4,14 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 import LeftSideMenu from '../components/using gird/LeftSideMenu.jsx';
 import LeftSideBar from '../components/using gird/LeftSideBar.jsx';
+import { ActiveSectionProvider } from '../components/using gird/ActiveSectionContext.jsx';
 
 function TestGrid(){
     const [isRightMenuOpen, setIsRightMenuOpen] = useState(true);
     const [isLeftMenuOpen, setIsLeftMenuOpen] = useState(true);
 
     return (
-        <div className="grid grid-cols-12 grid-rows-[1fr_5fr] w-full h-full gap-[0.05rem]">
+        <div className="grid grid-cols-12 grid-rows-[1fr_5fr] w-full h-screen gap-[0.05rem] ">
             <div className={`${isRightMenuOpen ? 'col-span-2' : 'col-span-1'} row-span-2 grid grid-cols-3 relative`}>
                 <div className={`bg-white ${isRightMenuOpen ? 'col-span-1' : 'col-span-3'} flex flex-col items-center`}>
                     <NavMenu />
@@ -38,12 +39,14 @@ function TestGrid(){
             </div>
             
             <div className={`${isLeftMenuOpen ? 'col-span-3' : 'col-span-1'} row-span-2 grid relative`}>
-                    <div className="grid grid-cols-[3fr_1fr] gap-[0.05rem]">
-                    {isLeftMenuOpen &&
-                        <div className="bg-white"><LeftSideMenu /></div>
-                    }
-                        <div className={`bg-white ${isLeftMenuOpen ? '' : "col-span-full"}`}><LeftSideBar /></div>
-                    </div>
+                    <ActiveSectionProvider>
+                        <div className="grid grid-cols-[3fr_1fr] gap-[0.05rem] min-h-0">
+                        {isLeftMenuOpen &&
+                            <div className="transition-all duration-1000 ease-in-out bg-white h-full overflow-y-auto min-h-0"><LeftSideMenu /></div>
+                        }
+                            <div className={`bg-white ${isLeftMenuOpen ? '' : "col-span-full"}`}><LeftSideBar /></div>
+                        </div>
+                    </ActiveSectionProvider>
 
                 <button className="group rounded-full absolute top-[10%] right-[-12.5px] box-border p-3 bg-white border-[1px] border-[#E2E8F0] hover:bg-[#00ca7d] cursor-pointer" onClick={() => setIsLeftMenuOpen(!isLeftMenuOpen)}>
                 {isLeftMenuOpen ? <ChevronLeft className='text-[#475370] group-hover:text-white' style={{fontSize: '20px', margin: '0px', position: 'absolute ', top: '2px',right: '2px'}}/> : <ChevronRight className='text-[#475370] group-hover:text-white' style={{fontSize: '20px', margin: '0px', position: 'absolute ', top: '2px',right: '2px'}}/>}
