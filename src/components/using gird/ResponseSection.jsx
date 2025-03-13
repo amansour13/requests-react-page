@@ -17,7 +17,7 @@ function ResponseSection(){
 
     return(
         <>
-            <div className='w-full flex items-center gap-5 grid grid-cols-[0.6fr_6fr_1.2fr]'>
+            <div className='w-full items-center gap-5 grid grid-cols-[0.6fr_6fr_1.2fr]'>
                     <h5 className='text-[13px]'>ردود سريعة</h5>
                     <div className='fast-response-text'>
                         <ul>
