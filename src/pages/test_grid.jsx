@@ -9,6 +9,7 @@ import PageTopBar from '../components/using gird/PageTopBar.jsx';
 import TabTitlesSection from '../components/using gird/TabTitlesSection.jsx';
 import EmailsSection from '../components/using gird/EmailsSection.jsx';
 import { TabsContextProvider } from '../components/using gird/TabsContext.jsx';
+import ResponseSection from '../components/using gird/ResponseSection.jsx';
 
 function TestGrid(){
     const [isRightMenuOpen, setIsRightMenuOpen] = useState(true);
@@ -38,9 +39,9 @@ function TestGrid(){
                     <div className="bg-white flex items-center min-w-0 w-full overflow-x-auto scrollbar-hide border-b-[0.05rem] border-[var(--secondary-color)]"><TabTitlesSection /></div>
                 </div>
 
-                <div className={`min-h-0 min-w-0 ${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[3fr_2fr] gap-[0.05rem]`}>
+                <div className={`min-h-0 ${isRightMenuOpen && isLeftMenuOpen ? 'col-span-7' : isRightMenuOpen ? 'col-span-9' : isLeftMenuOpen ? 'col-span-8' : 'col-span-10'} grid grid-rows-[4fr_3fr] gap-[0.05rem]`}>
                         <div className="bg-white relative min-h-0 min-w-0 h-full overflow-y-auto scrollbar-hide"><EmailsSection  /></div>
-                        <div className="bg-white">response section</div>
+                        <div className="bg-white min-h-0 h-full w-full p-5 gap-2 flex flex-col"><ResponseSection /></div>
                 </div>
             </TabsContextProvider>
             
