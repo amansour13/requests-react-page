@@ -1,4 +1,4 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss";
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -23,9 +23,175 @@ body {
   /* min-height: 100vh; */
   height: 100vh;
   width: 100vw;
+  background-color: var(--secondary-color);
 }
 
 a{
   text-decoration: none;
   color: inherit;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.btn-type1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #7A8699;
+  padding: 2px;
+  border: solid 1px #7A8699;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.btn-type1:hover{
+  background-color: var(--dark-green);
+  color: white;
+}
+
+.btn-type2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-green);
+  color: white;
+  padding: 2px;
+  border: solid 1px #7A8699;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.btn-type2:hover{
+  background-color: white;
+  color: #7A8699;
+}
+
+.active-card{
+  background-color: var(--light-green);
+  border: solid 2px var(--dark-green);
+}
+
+
+.fast-response-text{
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 5px 5px;
+  overflow-x: hidden;
+  width: 100%;
+
+}
+
+.fast-response-text ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.fast-response-text li{
+  background-color: white;
+  border: solid 1.5px var(--secondary-color);
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.fast-response-text li:hover{
+  background-color: var(--light-color);
+  color: white;
+}
+
+.fast-response-text li h6{
+  color: var(--secondary-color);
+  padding: 1px 10px;
+  text-decoration: none;
+  margin: 0px;
+}
+
+.fast-response-text {
+  overflow-x: auto;  /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Target only this div's scrollbar */
+.fast-response-text::-webkit-scrollbar {
+  margin-top: 10px;
+  height: 8px; /* Control the horizontal scrollbar height */
+}
+
+.fast-response-text::-webkit-scrollbar-track {
+  background: var(--light-color); /* Light gray track */
+  border-radius: 10px;
+}
+
+.fast-response-text::-webkit-scrollbar-thumb {
+  background: #888; /* Darker gray handle */
+  border-radius: 10px;
+}
+
+.fast-response-text::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Even darker gray when hovered */
+}
+
+
+.text-input{
+  border: solid 1px #7A8699;
+  border-radius: 20px;
+  padding: 0px 5px;
+  color: var(--secondary-color);
+  font-size: 12px;
+  width: auto;
+  min-width: 10px;
+}
+
+.text-input:focus{
+  border-color: var(--primary-color);
+}
+
+.search-input {
+  padding: 0px 25px 2px 7.5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #E2E8F0;
+  text-align: right;
+  color: #7A8699;
+  font-size: 12px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.search-input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+.search-input::placeholder {
+  color: #7A8699; 
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 65%;
+  transform: translateY(-50%);
+  color: var(--secondary-color); /* Gray color for icon */
+  pointer-events: none; /* Prevent clicking on the icon */
+}
+
+.add-reply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
 }
