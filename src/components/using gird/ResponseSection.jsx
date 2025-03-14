@@ -17,7 +17,7 @@ function ResponseSection(){
 
     return(
         <>
-            <div className='w-full items-center gap-5 grid grid-cols-[0.6fr_6fr_1.2fr]'>
+            <div className='w-full items-center gap-5 grid grid-cols-[0.8fr_6fr_1.2fr] max-xl:grid-cols-[1fr_6fr_1.5fr] max-lg:grid-cols-[1.2fr_6fr_1.8fr]'>
                     <h5 className='text-[13px]'>ردود سريعة</h5>
                     <div className='fast-response-text'>
                         <ul>
@@ -55,11 +55,11 @@ function ResponseSection(){
                                     ahmed@example.com
                                     <span className="text-[9px]">&times;</span>
                                 </div>
-                                    <div className="rounded-[20px] text-[9px] flex items-center bg-transparent border border-[#7A8699] text-[#7A8699] cursor-pointer px-2 py-0.5 hover:bg-[var(--dark-green)] hover:text-white gap-1" onClick={() => handleTagClick(event.target.innerText.replace("×", "").trim())}>
+                                    <div className="max-lg:hidden rounded-[20px] text-[9px] flex items-center bg-transparent border border-[#7A8699] text-[#7A8699] cursor-pointer px-2 py-0.5 hover:bg-[var(--dark-green)] hover:text-white gap-1" onClick={() => handleTagClick(event.target.innerText.replace("×", "").trim())}>
                                     ahmed@example.com
                                     <span className="text-[9px]">&times;</span>
                                 </div>
-                                    <div className="rounded-[20px] text-[9px] flex items-center bg-transparent border border-[#7A8699] text-[#7A8699] cursor-pointer px-2 py-0.5 hover:bg-[var(--dark-green)] hover:text-white gap-1" onClick={() => handleTagClick(event.target.innerText.replace("×", "").trim())}>
+                                    <div className="max-xl:hidden rounded-[20px] text-[9px] flex items-center bg-transparent border border-[#7A8699] text-[#7A8699] cursor-pointer px-2 py-0.5 hover:bg-[var(--dark-green)] hover:text-white gap-1" onClick={() => handleTagClick(event.target.innerText.replace("×", "").trim())}>
                                     ahmed@example.com
                                     <span className="text-[9px]">&times;</span>
                                 </div>

@@ -58,9 +58,9 @@ function LeftSideMenu() {
     <>
     {
           activeSection === "timelines" && 
-          <div className="p-4 overflow-y-auto h-full scrollbar-hide">
-              <div className='content-title'>
-                  <h2 className='text-[#29304C] text-[20px]/[50px]'>السجلات الزمنية</h2>
+          <div className="relative p-4 overflow-y-auto h-full scrollbar-hide">
+              <div className='sticky top-0 bg-white z-1'>
+                  <h2 className='text-[#29304C] text-[20px]/[50px] max-lg:text-[16px]/[25px]'>السجلات الزمنية</h2>
               </div>
               <Timeline sx={{padding: '0px'}}>
                   {timelineData.map((item, index) => (
@@ -71,9 +71,9 @@ function LeftSideMenu() {
                           {index !== timelineData.length - 1 && <TimelineConnector />}
                           </TimelineSeparator>
                           <TimelineContent >
-                              <Typography variant="h6" sx={{ color: '#29304C', textAlign: 'right',fontSize: '12px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.title}</Typography>
-                              <Typography variant="h6" color="#7A8699" sx={{ textAlign: 'right', fontSize: '9px',marginBottom: '10px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.time}</Typography>
-                              <Typography color="#29304C" sx={{ textAlign: 'right', fontSize: '9px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.description}</Typography>
+                              <Typography className="max-lg:!text-[9px]" variant="h6" sx={{ color: '#29304C', textAlign: 'right',fontSize: '12px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.title}</Typography>
+                              <Typography className="!text-[9px] max-lg:!text-[6px] !text-[#7A8699] !text-right !mb-[10px] !font-sans">{item.time}</Typography>
+                              <Typography className="max-lg:!text-[6px]" color="#29304C" sx={{ textAlign: 'right', fontSize: '9px', fontFamily: 'system-ui, Avenir, Helvetica, Arial, sans-serif;' }}>{item.description}</Typography>
                           </TimelineContent>
                       </TimelineItem>
                   ))}

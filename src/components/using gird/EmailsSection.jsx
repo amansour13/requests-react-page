@@ -92,10 +92,10 @@ function EmailsSection(){
     return (
 
         <>
-    <div className='flex justify-between sticky top-0 w-full p-5 bg-white'>
-        <h1 className="text-[#181C34] text-[18px]/[38px]">{title}</h1>
+    <div className='flex justify-between items-start sticky top-0 w-full p-5 bg-white'>
+        <h1 className="text-[#181C34] text-[18px]/[38px] max-lg:text-[14px]/[30px]">{title}</h1>
         
-        <div className='flex gap-3'>
+        <div className='flex gap-3 items-end'>
             <div className='flex flex-row-reverse items-center gap-1'>
                 <button className='btn-type1 group' style={{color: '#7A8699', border: 'none', padding: '0px'}}>
                     <PlayCircleFilledWhiteOutlinedIcon className="group-hover:text-white" sx={{fontSize: '20px'}}/>
@@ -126,7 +126,7 @@ function EmailsSection(){
             emailData.emails.map(email => (
                 <div className={`gap-2 p-3 w-full flex flex-col items-start justify-center rounded-2xl border-[1px] border-[#E2E8F0] ${highlight === email.id ? 'active-card' : ''}`} key={email.id} onClick={() => {setHighlight(email.id);setEmailR(email.sender.email)}}>
                     <div className='w-full flex justify-between'>
-                        <div className='flex gap-3 items-center'>
+                        <div className='flex gap-3 items-center max-lg:items-center'>
                             <img src={email.sender.image} alt='avatar' style={{width: '30px', height: '30px', objectFit:'cover', borderRadius: '100%'}}/>
                             
                             <div className='flex flex-col items-start'>
@@ -134,7 +134,7 @@ function EmailsSection(){
                                     <h5 className="font-bold text-[#181C34] text-[11px]">{email.sender.name}</h5>
                                     <h6 className="text-[9px] text-[#7A8699]">{email.timestamp}</h6>
                                 </div>
-                                <div className='message-card-header-text'>
+                                <div className='flex gap-2 max-lg:flex-col max-lg:gap-0'>
                                     <h6 className="text-[11px] text-[#7A8699]"><ReplyOutlinedIcon style={{fontSize: '20px'}}/>موجه إلي  {email.recipient.name}</h6>
                                     <h6 className="text-[11px] text-[#7A8699]"><EmailOutlinedIcon style={{fontSize:'20px'}}/> &lt;{email.sender.email}&gt; , &lt;{email.recipient.email}&gt;</h6>
                                 </div>
